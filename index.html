@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Vue Practise</title>
+        <script src =./js/vue.js></script>
+    </head>
+
+    <body>
+
+        <div id="app">
+            {{ message }} <!-- This is recieving the data from the message. -->
+        </div>
+
+        <script>
+            new Vue({
+                el: '#app', //This is setting element from the html id. 
+                data: {
+                    message: 'Hello World - Vue begginer!!!' //This is the data which is being passed in to the element.
+                }
+            });
+
+        </script>
+        
+    </body>
+
+</html>
