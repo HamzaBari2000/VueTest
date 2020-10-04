@@ -13,44 +13,29 @@
             {{ message }} <!-- This is recieving the data from the message. -->
         </div>
 
-        <div id="component">
- 
+        <div id="example-1">
+            <div v-for="item in items">
+                {{ item.message }}
+            </div>
         </div>
 
         <script>
             new Vue({
                 el: '#app', //This is setting element from the html id. 
                 data: {
-                    message: 'Hello World - Vue begginer!!!' + 2 //This is the data which is being passed in to the element.
+                    message: 'Hello World - Vue begginer!!!'  //This is the data which is being passed in to the element.
                 } //check git
             });
 
-            export default {
-                name: 'component',
-                components: {
-                },
-                data() {
-                    return {
-                        todos: [
-                        {
-                            id: 1,
-                            title: "Todo One",
-                            completed: false
-                        },
-                        {
-                            id: 2,
-                            title: "Todo Two",
-                            completed: true
-                        },
-                        {
-                            id: 3,
-                            title: "Todo Three",
-                            completed: false
-                        }
-                        ]
-                    }
+           var example1 = new Vue({
+                el: '#example-1',
+                data: {
+                    items: [
+                        { message: 'Foo' },
+                        { message: 'Bar' }
+                    ]
                 }
-            }    
+            })   
 
         </script>
         
