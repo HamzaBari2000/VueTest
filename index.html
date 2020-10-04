@@ -21,7 +21,44 @@
             </div>
         </div>
 
+    </br>
+
+        <ul id="repeat-object" class="demo">
+            <li v-for="value in object">
+                {{ $key }} : {{ value }}
+            </li>
+        </ul>
+
+    </br>
+
+    <div>
+        <span v-for="n in 10">{{ n }} </span>
+    </div>
+
         <script>
+
+            new Vue({
+                    el: '#n',
+                    data: {
+                        object: {
+                            FirstName: 'John',
+                            LastName: 'Doe',
+                            Age: 30
+                        }
+                    }
+                })
+
+            new Vue({
+                    el: '#repeat-object',
+                    data: {
+                        object: {
+                            FirstName: 'John',
+                            LastName: 'Doe',
+                            Age: 30
+                        }
+                    }
+                })
+
             new Vue({
                 el: '#app', //This is setting element from the html id. 
                 data: {
