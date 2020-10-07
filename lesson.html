@@ -6,5 +6,25 @@
     <title>Display Lesson</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
-  <body></body>
+  <body>
+    <div id="lessons">
+      <ul>
+        <li v-for="(value, propertyName) for lesson"></li>
+      </ul>
+    </div>
+
+    <script>
+      new vue({
+        el: "#lessons",
+        data: {
+          lesson: {
+            lessonName: "Learn JavaScript For Begginers",
+            lessonLocation: "The Burroughs, Hendon, London NW4 4BT",
+            lessonPrice: "£25.00",
+            lessonNoOfSpaces: 10,
+          },
+        },
+      });
+    </script>
+  </body>
 </html>
