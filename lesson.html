@@ -4,27 +4,44 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Display Lesson</title>
+    <script src=./js/vue.js></script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
-    <div id="lessons">
-      <ul>
-        <li v-for="(value, propertyName) for lesson"></li>
-      </ul>
-    </div>
+
+    <ul id="lessons">
+        <li v-for="value in object">
+            {{ value }}
+        </li>
+    </br>
+        <button id = "add-to-cart" v-on:click="reduced">Add To Cart</button>
+    </ul>
+
+</br>
 
     <script>
-      new vue({
-        el: "#lessons",
-        data: {
-          lesson: {
-            lessonName: "Learn JavaScript For Begginers",
-            lessonLocation: "The Burroughs, Hendon, London NW4 4BT",
-            lessonPrice: "£25.00",
-            lessonNoOfSpaces: 10,
-          },
-        },
-      });
+
+      new Vue({
+            el: '#lessons',
+            data: {
+                object: {
+                    lessonSubject: 'Subject - Computer Science',
+                    lessonLocation: 'Location - The Burroughs, Hendon, London NW4 4BT',
+                    lessonPrice: 'Price - £25.00',
+                    lessonSpaces: 30,
+                }
+            },
+          methods: {
+              reduced: function () {
+                this.object.lessonSpaces--;
+                if (this.object.lessonSpaces == 0) {
+                    document.getElementById("add-to-cart").disabled = true;
+                }
+              }
+          }
+        })
+
     </script>
+
   </body>
 </html>
